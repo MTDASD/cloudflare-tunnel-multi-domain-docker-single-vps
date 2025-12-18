@@ -1,0 +1,32 @@
+services:
+  # First Cloudflare Tunnel - Access Web UI on port 1111
+  cloudflared:
+    image: wisdomsky/cloudflared-web:latest
+    restart: unless-stopped
+    network_mode: host  # Uses host network for direct access
+    environment:
+      WEBUI_PORT: 1111  # Web UI accessible at http://your-vps-ip:1111
+    volumes:
+      - /mnt/storage/cloudflared/config:/config  # Persistent config storage
+  
+  # Second Cloudflare Tunnel - Access Web UI on port 2222
+  cloudflared2:
+    image: wisdomsky/cloudflared-web:latest
+    restart: unless-stopped
+    network_mode: host  # Uses host network for direct access
+    environment:
+      WEBUI_PORT: 2222  # Web UI accessible at http://your-vps-ip:2222
+    volumes:
+      - /mnt/storage/cloudflared2/config:/config  # Persistent config storage
+  
+  # Third Cloudflare Tunnel - Access Web UI on port 3333
+  cloudflared3:
+    image: wisdomsky/cloudflared-web:latest
+    restart: unless-stopped
+    network_mode: host  # Uses host network for direct access
+    environment:
+      WEBUI_PORT: 3333  # Web UI accessible at http://your-vps-ip:3333
+    volumes:
+      - /mnt/storage/cloudflared3/config:/config  # Persistent config storage
+
+#etc (unlimited additional instances can be added following the same pattern)
