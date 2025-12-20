@@ -2,6 +2,8 @@
 
 Manage multiple domains from a single VPS using isolated Cloudflare Tunnels. Perfect for users hosting many domains or services on one server—each tunnel runs independently with its own web-based configuration interface, providing automatic HTTPS, DDoS protection, and zero-trust network access without opening any ports on your VPS.
 
+> **💡 Important Note:** This multi-tunnel setup is designed for users managing domains across **different Cloudflare accounts**. If all your domains are managed under a **single Cloudflare account**, you only need **one tunnel**—a single Cloudflare Tunnel can handle alot of domains and services within the same account. Use multiple tunnels when you need complete isolation between different Cloudflare accounts or for organizational separation (e.g., production, staging, development environments).
+
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 ![Cloudflare](https://img.shields.io/badge/Cloudflare-F38020?style=for-the-badge&logo=cloudflare&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
